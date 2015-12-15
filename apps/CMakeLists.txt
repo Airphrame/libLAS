@@ -78,58 +78,58 @@ set(APPS_CPP_DEPENDENCIES
 
 if(LAS2LAS)
     add_executable(${LAS2LAS} las2las.cpp laskernel.cpp)
-    target_link_libraries(${LAS2LAS} ${APPS_CPP_DEPENDENCIES} )
+    target_link_libraries(${LAS2LAS} ${APPS_CPP_DEPENDENCIES} -lstdc++  -lm)
 endif()
 
 if(LASINFO)
     add_executable(${LASINFO} lasinfo.cpp laskernel.cpp )
-    target_link_libraries(${LASINFO} ${APPS_CPP_DEPENDENCIES}  )
+    target_link_libraries(${LASINFO} ${APPS_CPP_DEPENDENCIES}  -lstdc++  -lm)
 endif()
 
 if(LAS2TXT)
     add_executable( ${LAS2TXT}  las2txt.cpp laskernel.cpp )
-    target_link_libraries(${LAS2TXT} ${APPS_CPP_DEPENDENCIES}  )
+    target_link_libraries(${LAS2TXT} ${APPS_CPP_DEPENDENCIES}  -lstdc++  -lm)
 endif()
  
 # Build txt2las
 if(TXT2LAS)
     set(TXT2LAS_SRC lascommon.c ${TXT2LAS}.c)
     add_executable(${TXT2LAS} ${TXT2LAS_SRC})
-    target_link_libraries(${TXT2LAS} ${LIBLAS_C_LIB_NAME})
+    target_link_libraries(${TXT2LAS} ${LIBLAS_C_LIB_NAME} -lstdc++ -lm)
 endif()
 
 if(TS2LAS)
     add_executable(${TS2LAS} ts2las.cpp laskernel.cpp)
-    target_link_libraries(${TS2LAS} ${APPS_CPP_DEPENDENCIES} )
+    target_link_libraries(${TS2LAS} ${APPS_CPP_DEPENDENCIES} -lstdc++ -lm)
 endif()
 
 # Build lasblock
 if(LASBLOCK)
     set(LASBLOCK_SRC lasblock.cpp laskernel.cpp)
     add_executable(${LASBLOCK} ${LASBLOCK_SRC})
-    target_link_libraries(${LASBLOCK} ${APPS_CPP_DEPENDENCIES} )
+    target_link_libraries(${LASBLOCK} ${APPS_CPP_DEPENDENCIES} -lstdc++ -lm)
 endif()
 
 # Build las2ogr
 if(LAS2OGR)
     add_executable(${LAS2OGR} las2ogr.cpp)
-    target_link_libraries(${LAS2OGR} ${APPS_CPP_DEPENDENCIES})
+    target_link_libraries(${LAS2OGR} ${APPS_CPP_DEPENDENCIES} -lstdc++ -lm)
 endif()
 
 
 if(BIGFILE_TEST)
     add_executable(${BIGFILE_TEST} bigtest.c)
-    target_link_libraries(${BIGFILE_TEST} ${LIBLAS_C_LIB_NAME})
+    target_link_libraries(${BIGFILE_TEST} ${LIBLAS_C_LIB_NAME} -lstdc++  -lm)
 endif()
 
 if (LASINDEX_TEST)
     add_executable(${LASINDEX_TEST} lasindex_test.cpp)
-    target_link_libraries(${LASINDEX_TEST} ${APPS_CPP_DEPENDENCIES})    
+    target_link_libraries(${LASINDEX_TEST} ${APPS_CPP_DEPENDENCIES} -lstdc++ -lm)    
 endif()
 
 if(BIGFILE_BIO_TEST)
     add_executable(${BIGFILE_BIO_TEST} bigfile_boost_iostreams_test.cpp)
-    target_link_libraries(${BIGFILE_BIO_TEST} ${APPS_CPP_DEPENDENCIES} )    
+    target_link_libraries(${BIGFILE_BIO_TEST} ${APPS_CPP_DEPENDENCIES} -lstdc++ -lm)    
 endif()
 
 ###############################################################################

@@ -226,10 +226,12 @@ target_link_libraries(${LIBLAS_LIB_NAME}
   ${GEOTIFF_LIBRARY}
   ${GDAL_LIBRARY}
   ${LASZIP_LIBRARY}
-  ${Boost_LIBRARIES})
+  ${Boost_LIBRARIES}
+  -lstdc++
+  )
 
 target_link_libraries(${LIBLAS_C_LIB_NAME}
-  ${LIBLAS_LIB_NAME} )
+  ${LIBLAS_LIB_NAME} -lstdc++)
 
 set_target_properties(${LIBLAS_LIB_NAME}
   PROPERTIES
